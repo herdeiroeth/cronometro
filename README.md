@@ -12,6 +12,7 @@ Site simples de cronômetro (stopwatch) feito com HTML, CSS e JavaScript puro �
   - `Espaço` — iniciar / pausar
   - `L` — registrar volta
   - `R` — zerar
+- **Ranking local (leaderboard):** salve o tempo atual com um nome; os melhores tempos ficam guardados no navegador (`localStorage`) e persistem entre sessões, ordenados do menor para o maior.
 
 ## Como usar
 
@@ -27,4 +28,8 @@ python3 -m http.server 8000
 
 - `index.html` — marcação da página
 - `style.css` — estilos (tema escuro)
-- `app.js` — lógica do cronômetro
+- `app.js` — lógica do cronômetro e do ranking local
+
+## Ranking local
+
+O ranking é 100% local: nada é enviado a nenhum servidor. Os tempos ficam em `localStorage` sob a chave `cronometro-leaderboard` e são específicos do navegador/dispositivo. Use **Limpar ranking** para apagar tudo.
