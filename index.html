@@ -21,6 +21,30 @@
     </div>
 
     <ol class="laps" id="laps" aria-label="Voltas registradas"></ol>
+
+    <section class="leaderboard" aria-label="Ranking de tempos">
+      <h2>Ranking (local)</h2>
+
+      <form class="save-row" id="saveForm" autocomplete="off">
+        <input
+          type="text"
+          id="playerName"
+          class="name-input"
+          placeholder="Seu nome"
+          maxlength="24"
+          aria-label="Nome para salvar no ranking"
+        />
+        <button type="submit" id="saveScore" class="btn btn-primary" disabled>
+          Salvar tempo
+        </button>
+      </form>
+
+      <ol class="ranking" id="ranking" aria-label="Melhores tempos salvos"></ol>
+
+      <button id="clearRanking" class="btn btn-ghost clear-btn" disabled>
+        Limpar ranking
+      </button>
+    </section>
   </main>
 
   <script src="app.js"></script>

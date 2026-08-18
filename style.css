@@ -102,3 +102,100 @@ h1 {
 .laps li span:first-child { color: var(--text); }
 .laps li.best span { color: #4ade80; }
 .laps li.worst span { color: var(--danger); }
+
+/* ---------- Leaderboard ---------- */
+.leaderboard {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #334155;
+  text-align: left;
+}
+
+.leaderboard h2 {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.save-row {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.name-input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid #475569;
+  border-radius: 12px;
+  background: #0f172a;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.name-input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.save-row .btn { flex: 0 0 auto; }
+
+.ranking {
+  list-style: none;
+  counter-reset: rank;
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.ranking li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  padding: 0.6rem 0.4rem;
+  border-bottom: 1px solid #334155;
+  font-variant-numeric: tabular-nums;
+}
+
+.ranking li::before {
+  counter-increment: rank;
+  content: counter(rank);
+  flex: 0 0 1.6rem;
+  text-align: center;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.ranking li .rank-name {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--text);
+}
+
+.ranking li .rank-time {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.ranking li:nth-child(1)::before { color: #fbbf24; }
+.ranking li:nth-child(2)::before { color: #cbd5e1; }
+.ranking li:nth-child(3)::before { color: #d97706; }
+
+.ranking:empty::after {
+  content: "Nenhum tempo salvo ainda.";
+  display: block;
+  padding: 0.6rem 0.4rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.clear-btn {
+  width: 100%;
+  margin-top: 1rem;
+}
